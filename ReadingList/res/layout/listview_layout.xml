@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:gravity="center"
+  android:orientation="vertical" >
+
+<TableLayout 
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent" 
+    android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff"> 
+    <!-- Row 1 with single column -->
+   
+   
+  
+   <TableRow>
+ 
+        <TextView 
+            android:id="@+id/train" 
+            android:layout_weight="1" 
+            android:textColor="#000000"
+            android:minWidth="50dp"
+            android:maxWidth="50dp"
+            android:padding="20dip" android:gravity="left"/>  
+        <TextView 
+            android:id="@+id/from" 
+            android:layout_weight="1" 
+            android:textColor="#000000"
+            android:minWidth="50dp"
+            android:maxWidth="50dp"
+           
+            android:padding="20dip" android:gravity="left"/>
+        
+           <CheckBox
+          android:id="@+id/checkbox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:padding="10dip"
+         android:layout_margin="4dip"
+         android:layout_weight="1"
+       
+            android:textSize="15dp" 
+            android:text="Sign In"
+        />
+        
+            
+               <CheckBox
+          android:id="@+id/checkbox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:padding="10dip"
+         android:layout_margin="4dip"
+         android:layout_weight="1"
+       
+            android:textSize="15dp" 
+            android:text="Sign Out"
+        />
+        
+        
+   
+    </TableRow> 
+     
+</TableLayout>
+
+
+
+</LinearLayout>
