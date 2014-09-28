@@ -15,14 +15,14 @@
    <TableRow>
  
         <TextView 
-            android:id="@+id/train" 
+            android:id="@+id/student" 
             android:layout_weight="1" 
             android:textColor="#000000"
             android:minWidth="50dp"
             android:maxWidth="50dp"
             android:padding="20dip" android:gravity="left"/>  
         <TextView 
-            android:id="@+id/from" 
+            android:id="@+id/parent" 
             android:layout_weight="1" 
             android:textColor="#000000"
             android:minWidth="50dp"

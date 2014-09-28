@@ -8,80 +8,50 @@ import java.util.List;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 public class ReadingListFragment extends ListFragment {
 	private ListView mainListView;
 	 private List<HashMap<String,String>> aList;
-	    String[] from = { "train","from", "to" };
-     
-     // Ids of views in listview_layout
-     int[] to = { R.id.train,R.id.from};        
+	    String[] from = { "student","parent", "to" };
+        int[] to = { R.id.student, R.id.parent};        
   
-	// Array of strings storing country names
-    String[] countries = new String[] {
-            "Robos, Fludd",
-            "India, Fool",
-            "South, Korea",
-            "Japan, Taokk",
-            "Robos, Fludd",
-            "India, Fool",
-            "South, Korea",
-            "Japan, Taokk",
-            "Robos, Fludd",
-            "India, Fool",
-            "South, Korea",
-            "Japan, Taokk"
-    };    
+	  
     
-    // Array of integers points to images stored in /res/drawable/
-    int[] flags = new int[]{
-    		R.drawable.india,
-    		R.drawable.pakistan,
-    		R.drawable.srilanka,
-    		R.drawable.china,
-    		R.drawable.bangladesh,
-    		R.drawable.nepal,
-    		R.drawable.afghanistan,
-    		R.drawable.nkorea,
-    		R.drawable.skorea,
-    		R.drawable.japan	
-    };
+   
     
-    // Array of strings to store currencies
-    String[] currency = new String[]{
-    	"North Korean Won",
-    	"North Korean",
-    	"South Korean Won",
-    	"South Korean Won",
-    	"North Korean Won",
-    	"North Korean",
-    	"South Korean Won",
-    	"South Korean Won",
-    	"North Korean Won",
-    	"North Korean",
-    	"South Korean Won",
-    	"South Korean Won"
-    };
     
     
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         View header = getActivity().getLayoutInflater().inflate(R.layout.listview_header, null);
         
+        StudentDataSource datasource = new StudentDataSource(getActivity().getBaseContext());
+        datasource.open();
+        datasource.createStudents();
+        int length=datasource.listStudents();
+        
+     
         this.getListView().addHeaderView(header);
-     // Each row in the list stores country name, currency and flag
         aList = new ArrayList<HashMap<String,String>>();        
         
-        for(int i=0;i<12;i++){
+        for(int i=0;i<length;i++){
         	HashMap<String, String> hm = new HashMap<String,String>();
-            hm.put("train", countries[i]);
-            hm.put("from", currency[i]);
+            hm.put("student", StudentDataSource.student[i]);
+            hm.put("parent", StudentDataSource.parent[i]);
             
             		  
             aList.add(hm);        
@@ -98,17 +68,65 @@ public class ReadingListFragment extends ListFragment {
     }
     
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-    	  
-            super.onCreate(savedInstanceState);
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    	super.onCreateOptionsMenu(menu, inflater);
+    	inflater.inflate(R.menu.main, menu);
+        
+        
+    
+    }
+    
+  
+
+    
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+    	
+    	
+    	  switch (item.getItemId()) {
+		    case R.id.toast:
+		      Toast.makeText(getActivity().getBaseContext(), R.string.menu_updates, 
+		                     Toast.LENGTH_LONG).show();
+		      FragmentManager fragMan = getFragmentManager();
+		      LinearLayout ll = new LinearLayout(getActivity().getBaseContext());
+		      ll.setId(12345);
+		      FragmentTransaction fragTransaction = fragMan.beginTransaction();
+
+		      Fragment myFrag = new LoadDataFragment();
+		      //fragTransaction.add(R.layout.activity_main,myFrag,"fragments");
+		      fragTransaction.replace(R.id.fragment_container,myFrag);
+		     fragTransaction.addToBackStack(null);
+		       //  transaction.addToBackStack(null);
+		      fragTransaction.commit();
+		      return true;
+		    default:
+		      return super.onOptionsItemSelected(item);
+		  }
+        
+    }
+    
+    
+   // @Override
+   // public void onCreateView(Bundle savedInstanceState) {
+    //	 setHasOptionsMenu(true);
+      //   super.onCreate(savedInstanceState);
           
         
     	
 	
-    }
+    //}
     
+    
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+    //	 setHasOptionsMenu(true);
+       //  super.onCreate(savedInstanceState);
+         return super.onCreateView(inflater, container, savedInstanceState);
+        
    
-    
+    }  
  
 	
 
