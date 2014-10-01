@@ -6,6 +6,7 @@
     <string name="toast_title">Hello world!</string>
      <string name="menu_updates">Data Updates</string>
        <string name="LoadData">Load Data</string>
+        <string name="password_hint">Enter Password</string>
   
 
 </resources>
