@@ -20,7 +20,7 @@ public class LoadDataFragment extends Fragment  implements OnClickListener {
         View view = inflater.inflate(R.layout.textview_layout, container, false);
         text= (TextView) view.findViewById(R.id.AndroidOs);
         text.setText("Enter Password");
-
+        StudentDataSource.loaded=true;
         btn = (Button) view.findViewById(R.id.button1);
         btn.setOnClickListener(this);  
         

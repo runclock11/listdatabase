@@ -44,8 +44,9 @@ public class ReadingListFragment extends ListFragment {
       //  datasource.createStudents();
         int length=datasource.listStudents();
         
-     
+     if (!StudentDataSource.loaded)  {
         this.getListView().addHeaderView(header);
+     }
         aList = new ArrayList<HashMap<String,String>>();        
         
         for(int i=0;i<length;i++){

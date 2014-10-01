@@ -18,6 +18,7 @@ public class StudentDataSource {
   public static String name;
   public static String[] student = new String[10];
   public static String[] parent = new String[10];
+  public static boolean loaded=false;
  private int count =0;
   private String[] allColumns = { SQLLiteHelper.COLUMN_ID,
       SQLLiteHelper.COLUMN_STUDENT,SQLLiteHelper.COLUMN_PARENT,SQLLiteHelper.COLUMN_IN,
@@ -49,33 +50,33 @@ public class StudentDataSource {
 	  
 	database.execSQL("delete from "+ SQLLiteHelper.TABLE_STUDENTS);
  	ContentValues values = new ContentValues();
-   	values.put(SQLLiteHelper.COLUMN_STUDENT, "Alden Cooper");
+   	values.put(SQLLiteHelper.COLUMN_STUDENT, "ChesterCooper");
     	values.put(SQLLiteHelper.COLUMN_PARENT,  "Chester & Andrea Cooper");
     	values.put(SQLLiteHelper.COLUMN_IN,  "0");
     	values.put(SQLLiteHelper.COLUMN_OUT,  "0");
     	values.put(SQLLiteHelper.COLUMN_CLASS,  "Eigth");
       database.insert(SQLLiteHelper.TABLE_STUDENTS,null, values);
      
-          values.put(SQLLiteHelper.COLUMN_STUDENT, "Berry Cooper");
-    	values.put(SQLLiteHelper.COLUMN_PARENT,  "Andrea Cooper");
+          values.put(SQLLiteHelper.COLUMN_STUDENT, "Alden Cooper");
+    	values.put(SQLLiteHelper.COLUMN_PARENT,  "AndreaCooper");
     	values.put(SQLLiteHelper.COLUMN_CLASS,  "Sixth");
         database.insert(SQLLiteHelper.TABLE_STUDENTS,null, values);
         
     	Log.v("STUDENT111", "StudentDataSource.name");
-        values.put(SQLLiteHelper.COLUMN_STUDENT, "Bella Cooper");
+        values.put(SQLLiteHelper.COLUMN_STUDENT, "JustinCooper");
     	values.put(SQLLiteHelper.COLUMN_PARENT,  "Chester  Cooper");
     	values.put(SQLLiteHelper.COLUMN_CLASS,  "PREK");
         database.insert(SQLLiteHelper.TABLE_STUDENTS,null, values); 
     	
-        values.put(SQLLiteHelper.COLUMN_STUDENT, "John Cooper");
-    	values.put(SQLLiteHelper.COLUMN_PARENT,  "Florence Cooper");
+        values.put(SQLLiteHelper.COLUMN_STUDENT, "Berry Cooper");
+    	values.put(SQLLiteHelper.COLUMN_PARENT,  "Towswon Cooper");
     	values.put(SQLLiteHelper.COLUMN_IN,  "0");
     	values.put(SQLLiteHelper.COLUMN_OUT,  "0");
     	values.put(SQLLiteHelper.COLUMN_CLASS,  "Eigth");
        database.insert(SQLLiteHelper.TABLE_STUDENTS,null, values);
      
-          values.put(SQLLiteHelper.COLUMN_STUDENT, "Florence Cooper");
-    	values.put(SQLLiteHelper.COLUMN_PARENT,  "John Cooper");
+          values.put(SQLLiteHelper.COLUMN_STUDENT, "Andrea Cooper");
+    	values.put(SQLLiteHelper.COLUMN_PARENT,  "Monkey Cooper");
     	values.put(SQLLiteHelper.COLUMN_CLASS,  "Sixth");
         database.insert(SQLLiteHelper.TABLE_STUDENTS,null, values);
         
@@ -90,11 +91,13 @@ public class StudentDataSource {
     	values.put(SQLLiteHelper.COLUMN_PARENT,  "Phyllis Cooper");
     	values.put(SQLLiteHelper.COLUMN_CLASS,  "PREK");
         database.insert(SQLLiteHelper.TABLE_STUDENTS,null, values); 
+        database.close();
   }
     public int listStudents() {
        Cursor cursor = database.query(SQLLiteHelper.TABLE_STUDENTS,
                 null, null, null, null, null, null);
-
+         student= new String[10];
+         parent = new String[10];
             cursor.moveToFirst();
             int i =0;
               while (!cursor.isAfterLast()) {
