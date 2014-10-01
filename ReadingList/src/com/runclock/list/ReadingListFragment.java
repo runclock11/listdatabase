@@ -41,7 +41,7 @@ public class ReadingListFragment extends ListFragment {
         
         StudentDataSource datasource = new StudentDataSource(getActivity().getBaseContext());
         datasource.open();
-        datasource.createStudents();
+      //  datasource.createStudents();
         int length=datasource.listStudents();
         
      

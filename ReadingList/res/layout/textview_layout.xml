@@ -3,18 +3,19 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:gravity="center"
-    android:background="#5ba4e5"
-    android:id="@+id/myFrame"
+      android:id="@+id/myFrame"
     android:layout_height="match_parent">
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40px"
-        android:textColor="#ffffff"
+        android:textSize="20px"
+        android:inputType="textPassword"
+          
         android:layout_gravity="center"
         android:id="@+id/AndroidOs"/>
     
      <Button
+     android:id="@+id/button1"
      android:layout_height="wrap_content"
      android:layout_width="wrap_content"
      android:text="@string/LoadData"

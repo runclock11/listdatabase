@@ -56,7 +56,7 @@ public class StudentDataSource {
     	values.put(SQLLiteHelper.COLUMN_CLASS,  "Eigth");
       database.insert(SQLLiteHelper.TABLE_STUDENTS,null, values);
      
-          values.put(SQLLiteHelper.COLUMN_STUDENT, "Rondo Cooper");
+          values.put(SQLLiteHelper.COLUMN_STUDENT, "Berry Cooper");
     	values.put(SQLLiteHelper.COLUMN_PARENT,  "Andrea Cooper");
     	values.put(SQLLiteHelper.COLUMN_CLASS,  "Sixth");
         database.insert(SQLLiteHelper.TABLE_STUDENTS,null, values);
