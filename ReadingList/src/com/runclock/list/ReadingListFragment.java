@@ -90,9 +90,7 @@ public class ReadingListFragment extends ListFragment {
 		      Toast.makeText(getActivity().getBaseContext(), R.string.menu_updates, 
 		                     Toast.LENGTH_LONG).show();
 		      FragmentManager fragMan = getFragmentManager();
-		      LinearLayout ll = new LinearLayout(getActivity().getBaseContext());
-		      ll.setId(12345);
-		      FragmentTransaction fragTransaction = fragMan.beginTransaction();
+		     		      FragmentTransaction fragTransaction = fragMan.beginTransaction();
 
 		      Fragment myFrag = new LoadDataFragment();
 		      //fragTransaction.add(R.layout.activity_main,myFrag,"fragments");
@@ -100,6 +98,7 @@ public class ReadingListFragment extends ListFragment {
 		     fragTransaction.addToBackStack(null);
 		       //  transaction.addToBackStack(null);
 		      fragTransaction.commit();
+		     
 		      return true;
 		    default:
 		      return super.onOptionsItemSelected(item);

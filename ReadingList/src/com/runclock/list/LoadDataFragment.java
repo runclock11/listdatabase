@@ -1,7 +1,12 @@
 package com.runclock.list;
 
-import android.os.Bundle;
+
 import android.support.v4.app.Fragment;
+
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+
+import android.support.v4.app.FragmentTransaction.*;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -9,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.os.Bundle;
 
 
 public class LoadDataFragment extends Fragment  implements OnClickListener {
@@ -29,6 +35,7 @@ public class LoadDataFragment extends Fragment  implements OnClickListener {
     
     
     public void onClick(View v) {
+    	loadData();/*
     	String a= text.toString();
         if (text.getText().toString().equals("runclock")) {
         	    loadData();
@@ -37,13 +44,27 @@ public class LoadDataFragment extends Fragment  implements OnClickListener {
         	 Toast.makeText(this.getActivity(), 
         	            "Password incorrect",10).show();
         	  
-        }
+        }*/
 
     }
     public void loadData() {
     	 StudentDataSource datasource = new StudentDataSource(getActivity().getBaseContext());
          datasource.open();
          datasource.createStudents();
+         FragmentManager fragmentManager = getFragmentManager();
+         fragmentManager.popBackStack();
+     	    
+        
+         
+       
+		   
+        
+         
+  
+
+      //   fragmentTransaction.replace(R.id.fragment_container,fragment2);
+		 
+        //   fragmentTransaction.commit();
      
     }
 }
