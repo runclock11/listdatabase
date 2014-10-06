@@ -15,7 +15,10 @@
         android:id="@+id/toast"
         android:title="@string/menu_updates"
         android:showAsAction="ifRoom"/>
-       
+         <item
+        android:id="@+id/add"
+        android:title="@string/menu_add"
+        android:showAsAction="ifRoom"/>  
        
        
        

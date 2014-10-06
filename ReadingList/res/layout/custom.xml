@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+    
+  
+       <TextView
+         
+         android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+         android:text="@string/label1"
+       android:layout_centerVertical="true"
+          android:layout_marginRight="5dp"
+         android:layout_alignParentLeft="true"
+         android:textSize="25sp"
+          android:id="@+id/label1"
+         />
+        
+        <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:inputType="text"
+        android:layout_centerVertical="true"
+      
+         android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/label1"
+        android:id="@+id/newFirstName"/>
+        
+        <TextView
+        android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+       android:layout_toRightOf="@id/newFirstName"
+        android:layout_marginRight="10dp"
+           android:textSize="25sp"
+     
+         android:layout_centerVertical="true"
+    
+        android:text="@string/label2"
+         android:id="@+id/label2"
+         />
+        
+      
+       <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+           android:layout_centerVertical="true"
+    
+          android:textSize="20sp"
+        android:layout_toRightOf="@id/label2"
+        android:inputType="text"
+        android:id="@+id/newLastName"/> 
+        
+       
+             
+        />
+     
+     
+ 
+</RelativeLayout>

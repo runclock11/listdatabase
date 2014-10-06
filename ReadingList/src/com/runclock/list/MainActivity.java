@@ -2,6 +2,8 @@ package com.runclock.list;
 
 
 import com.runclock.list.R;
+
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -51,6 +53,12 @@ public class MainActivity extends FragmentActivity {
 			       //  transaction.addToBackStack(null);
 			      fragTransaction.commit();
 			      return true;
+			    case R.id.add:
+			    	final Dialog dialog1 = new Dialog(this);
+					dialog1.setContentView(R.layout.custom);
+					dialog1.setTitle("Title...");
+					dialog1.show();
+			    return true;	
 			    default:
 			      return super.onOptionsItemSelected(item);
 			  }
