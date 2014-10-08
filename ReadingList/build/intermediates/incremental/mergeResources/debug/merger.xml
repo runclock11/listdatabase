@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="/Users/cooperac/GitHub/listdatabase/ReadingList/res" >
+            <file
+                name="afghanistan"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/drawable/afghanistan.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="bangladesh"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/drawable/bangladesh.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="china"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/drawable/china.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="india"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/drawable/india.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="japan"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/drawable/japan.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="nepal"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/drawable/nepal.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="nkorea"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/drawable/nkorea.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="pakistan"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/drawable/pakistan.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="skorea"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/drawable/skorea.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="srilanka"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/drawable/srilanka.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/drawable-hdpi/ic_launcher.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/drawable-mdpi/ic_launcher.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/drawable-xhdpi/ic_launcher.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/drawable-xxhdpi/ic_launcher.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="activity_main"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/layout/activity_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="custom"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/layout/custom.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="listview_header"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/layout/listview_header.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="listview_layout"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/layout/listview_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="textview_layout"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/layout/textview_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="main"
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/menu/main.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/values/dimens.xml"
+                qualifiers="" >
+                <dimen name="activity_horizontal_margin" >16dp
+                </dimen>
+                <dimen name="activity_vertical_margin" >16dp
+                </dimen>
+            </file>
+            <file
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/values/strings.xml"
+                qualifiers="" >
+                <string name="cancel" >Cancel
+                </string>
+                <string name="action_settings" >Settings
+                </string>
+                <string name="menu_updates" >Data Updates
+                </string>
+                <string name="password_hint" >Enter Password
+                </string>
+                <string name="ok" >OK
+                </string>
+                <string name="toast_title" >Hello world!
+                </string>
+                <string name="menu_add" >Add Data12
+                </string>
+                <string name="LoadData" >Load Data
+                </string>
+                <string name="app_name" >Reading List
+                </string>
+                <string name="label3" >Parent:
+                </string>
+                <string name="label2" >Last:
+                </string>
+                <string name="label1" >First:
+                </string>
+            </file>
+            <file
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/values/styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+            </file>
+            <file
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/values-sw720dp-land/dimens.xml"
+                qualifiers="sw720dp-land-v13" >
+                <dimen name="activity_horizontal_margin" >128dp
+                </dimen>
+            </file>
+            <file
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/values-v11/styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/values-v14/styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+        </source>
+        <source path="/Users/cooperac/GitHub/listdatabase/ReadingList/build/generated/res/rs/debug" />
+        <source path="/Users/cooperac/GitHub/listdatabase/ReadingList/build/generated/res/generated/debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/cooperac/GitHub/listdatabase/ReadingList/build-types/debug/res" />
+    </dataSet>
+
+</merger>

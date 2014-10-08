@@ -3,6 +3,7 @@ package com.runclock.list;
 
 import com.runclock.list.R;
 
+import android.app.ActionBar.LayoutParams;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -47,17 +49,20 @@ public class MainActivity extends FragmentActivity {
 			        FragmentTransaction fragTransaction = fragMan.beginTransaction();
 
 			      Fragment myFrag = new LoadDataFragment();
-			      //fragTransaction.add(R.layout.activity_main,myFrag,"fragments");
-			      fragTransaction.replace(R.id.fragment_container,myFrag);
+			       fragTransaction.replace(R.id.fragment_container,myFrag);
 			     fragTransaction.addToBackStack(null);
-			       //  transaction.addToBackStack(null);
-			      fragTransaction.commit();
+			       fragTransaction.commit();
 			      return true;
 			    case R.id.add:
-			    	final Dialog dialog1 = new Dialog(this);
-					dialog1.setContentView(R.layout.custom);
-					dialog1.setTitle("Title...");
-					dialog1.show();
+			    	  FragmentManager fragMan1 = this.getSupportFragmentManager();
+				        FragmentTransaction fragTransaction1 = fragMan1.beginTransaction();
+
+				      Fragment myFrag1 = new NewStudentFragment();
+				       fragTransaction1.replace(R.id.fragment_container,myFrag1);
+				       fragTransaction1.addToBackStack(null);
+				       fragTransaction1.commit();
+				    
+			    	
 			    return true;	
 			    default:
 			      return super.onOptionsItemSelected(item);

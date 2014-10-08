@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="/Users/cooperac/GitHub/listdatabase/ReadingList/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/cooperac/GitHub/listdatabase/ReadingList/build-types/debug/assets" />
+    </dataSet>
+
+</merger>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TableLayout 
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent" 
+    android:shrinkColumns="*" 
+    android:stretchColumns="*"
+    android:background="#ffffff"> 
+    <!-- Row 1 with single column -->
+    
+}  <TableRow>
+
+   
+             <TextView 
+            android:id="@+id/from2"
+            android:layout_weight="1" android:background="#d3d3d3"
+            android:textColor="#000000"
+            android:minWidth="50dp"
+            android:maxWidth="50dp"
+            android:text="Student's Name"
+            android:padding="20dip" android:gravity="left"/>
+        
+                 <TextView 
+            android:id="@+id/from3" 
+            android:layout_weight="1" android:background="#d3d3d3"
+            android:textColor="#000000"
+            android:minWidth="50dp"
+            android:maxWidth="50dp"
+             android:text="Parent's Name"
+           
+            android:padding="20dip" android:gravity="left"/>
+        
+         
+            <TextView 
+            android:id="@+id/from0"
+            android:layout_weight="1" android:background="#d3d3d3"
+            android:textColor="#000000"
+            android:minWidth="50dp"
+            android:maxWidth="50dp"
+             android:text="Sign Student In"
+           
+            android:padding="20dip" android:gravity="left"/>
+        
+        
+       <TextView 
+            android:id="@+id/from1"
+            android:layout_weight="1" android:background="#d3d3d3"
+            android:textColor="#000000"
+            android:minWidth="50dp"
+            android:maxWidth="50dp"
+             android:text="Sign Student Out"
+           
+            android:padding="20dip" android:gravity="left"/>
+        
+    </TableRow> 
+     
+</TableLayout>
+</LinearLayout>
+<!-- From: file:/Users/cooperac/GitHub/listdatabase/ReadingList/res/layout/listview_header.xml -->

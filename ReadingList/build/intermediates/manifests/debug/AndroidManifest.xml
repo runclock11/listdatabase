@@ -22,10 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-         <provider android:name="StudentProvider" 
-           	android:authorities="com.runclock.list">
+
+        <provider
+            android:name="com.runclock.list.StudentProvider"
+            android:authorities="com.runclock.list" >
         </provider>
-  
     </application>
 
 </manifest>
