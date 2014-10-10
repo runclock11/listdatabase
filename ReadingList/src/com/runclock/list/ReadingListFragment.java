@@ -82,58 +82,7 @@ public class ReadingListFragment extends ListFragment {
     public boolean onOptionsItemSelected(MenuItem item) {
     	return true;
     }
-    /*
-    
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-    	return true;
-    	
-    	  switch (item.getItemId()) {
-		    case R.id.toast:
-		    	 Toast.makeText(getActivity().getBaseContext(), R.string.menu_updates, 
-	                     Toast.LENGTH_LONG).show();*/
-	  
-		//    	final Dialog dialog = new Dialog(getActivity().getBaseContext());
-			//	dialog.setContentView(R.layout.custom);
-				//dialog.setTitle("Title...");
-				//dialog.show();
-		  	/*
-		    	
-		      Toast.makeText(getActivity().getBaseContext(), R.string.menu_updates, 
-		                     Toast.LENGTH_LONG).show();
-		      FragmentManager fragMan = getFragmentManager();
-		     		      FragmentTransaction fragTransaction = fragMan.beginTransaction();
-
-		      Fragment myFrag = new LoadDataFragment();
-		      //fragTransaction.add(R.layout.activity_main,myFrag,"fragments");
-		      fragTransaction.replace(R.id.fragment_container,myFrag);
-		     fragTransaction.addToBackStack(null);
-		       //  transaction.addToBackStack(null);
-		      fragTransaction.commit();
-		     
-		      return true;
-		    case R.id.add:
-		    	final Dialog dialog1 = new Dialog(getActivity().getBaseContext());
-				dialog1.setContentView(R.layout.custom);
-				dialog1.setTitle("Title...");
-				dialog1.show();
-		    return true;	
-		    default:
-		      return super.onOptionsItemSelected(item);
-		  }
-        
-    }
-    
-    */
-   // @Override
-   // public void onCreateView(Bundle savedInstanceState) {
-    //	 setHasOptionsMenu(true);
-      //   super.onCreate(savedInstanceState);
-          
-        
-    	
-	
-    //}
+   
     
     
     @Override
