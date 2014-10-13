@@ -114,21 +114,21 @@
             <file
                 path="/Users/cooperac/GitHub/listdatabase/ReadingList/res/values/strings.xml"
                 qualifiers="" >
-                <string name="cancel" >Cancel
+                <string name="menu_updates" >Data Updates
                 </string>
                 <string name="action_settings" >Settings
                 </string>
-                <string name="menu_updates" >Data Updates
+                <string name="LoadData" >Load Data
+                </string>
+                <string name="OK" >OK
+                </string>
+                <string name="cancel" >Cancel
                 </string>
                 <string name="password_hint" >Enter Password
                 </string>
-                <string name="ok" >OK
-                </string>
-                <string name="toast_title" >Hello world!
-                </string>
                 <string name="menu_add" >Add Data12
                 </string>
-                <string name="LoadData" >Load Data
+                <string name="toast_title" >Hello world!
                 </string>
                 <string name="app_name" >Reading List
                 </string>

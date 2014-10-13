@@ -55,16 +55,11 @@ public class MainActivity extends FragmentActivity {
 			      return true;
 			    case R.id.add:
 			    	  FragmentManager fragMan1 = this.getSupportFragmentManager();
-				        FragmentTransaction fragTransaction1 = fragMan1.beginTransaction();
-
+					 	 
 				      NewStudentFragment myFrag1 = new NewStudentFragment();
 				      myFrag1.show(fragMan1, "tag");
 				    
-				     // Fragment myFrag1 = new MyDialogFragment();
-				     //  fragTransaction1.replace(R.id.fragment_container,myFrag1);
-				       //fragTransaction1.addToBackStack(null);
-				       //fragTransaction1.commit();
-				    
+					    
 			    	
 			    return true;	
 			    default:

@@ -8,7 +8,7 @@
       <string name="menu_add">Add Data12</string>
      <string name="LoadData">Load Data</string>
      <string name="password_hint">Enter Password</string>
-     <string name="ok">OK</string>
+      <string name="OK">OK</string>
        <string name="label3">Parent:</string>
            <string name="label2">Last:</string>
           <string name="label1">First:</string>

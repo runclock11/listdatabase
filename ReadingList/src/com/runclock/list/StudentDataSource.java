@@ -45,6 +45,21 @@ public class StudentDataSource {
     dbHelper.close();
   }
 
+  public void deleteStudents() {
+	  database.execSQL("delete from "+ SQLLiteHelper.TABLE_STUDENTS);
+	  database.close();
+  }
+  public void createStudents(String student, String parent, String className) {
+	  ContentValues values = new ContentValues();
+	   	values.put(SQLLiteHelper.COLUMN_STUDENT, student);
+	    	values.put(SQLLiteHelper.COLUMN_PARENT,  parent);
+	    	values.put(SQLLiteHelper.COLUMN_IN,  "0");
+	    	values.put(SQLLiteHelper.COLUMN_OUT,  "0");
+	    	values.put(SQLLiteHelper.COLUMN_CLASS,  className);
+	      database.insert(SQLLiteHelper.TABLE_STUDENTS,null, values);
+	      database.close();
+
+  }
   public void createStudents() {
  
 	  

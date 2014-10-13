@@ -59,12 +59,14 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16348773" vertical-offset="0" max-vertical-offset="1545">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.38964579" vertical-offset="563" max-vertical-offset="1545">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
-                <element signature="e#316#332#0" expanded="true" />
-                <element signature="e#967#983#0" expanded="true" />
-                <element signature="e#1455#1471#0" expanded="true" />
+                <element signature="e#298#314#0" expanded="true" />
+                <element signature="e#949#965#0" expanded="true" />
+                <element signature="e#1437#1453#0" expanded="true" />
+                <element signature="e#2215#2227#0" expanded="true" />
+                <element signature="e#2479#2495#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -795,7 +797,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="AVD_for_Nexus_S_by_Google" />
   </component>
   <component name="RunManager" selected="Android Application.ReadingList">
@@ -969,12 +971,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="23" y="22" width="1260" height="711" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32936507" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32936507" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1029,9 +1031,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1110">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#316#332#0" expanded="true" />
-            <element signature="e#967#983#0" expanded="true" />
-            <element signature="e#1455#1471#0" expanded="true" />
+            <element signature="e#298#314#0" expanded="true" />
+            <element signature="e#949#965#0" expanded="true" />
+            <element signature="e#1437#1453#0" expanded="true" />
+            <element signature="e#2215#2227#0" expanded="true" />
+            <element signature="e#2479#2495#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1093,12 +1097,14 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16348773" vertical-offset="0" max-vertical-offset="1545">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.38964579" vertical-offset="563" max-vertical-offset="1545">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
-            <element signature="e#316#332#0" expanded="true" />
-            <element signature="e#967#983#0" expanded="true" />
-            <element signature="e#1455#1471#0" expanded="true" />
+            <element signature="e#298#314#0" expanded="true" />
+            <element signature="e#949#965#0" expanded="true" />
+            <element signature="e#1437#1453#0" expanded="true" />
+            <element signature="e#2215#2227#0" expanded="true" />
+            <element signature="e#2479#2495#0" expanded="true" />
           </folding>
         </state>
       </provider>

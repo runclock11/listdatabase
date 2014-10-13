@@ -18,13 +18,18 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
-public class ReadingListFragment extends ListFragment {
+public class ReadingListFragment extends ListFragment 
+   {
 	private ListView mainListView;
 	 private List<HashMap<String,String>> aList;
 	    String[] from = { "student","parent", "to" };
@@ -42,9 +47,8 @@ public class ReadingListFragment extends ListFragment {
         
         StudentDataSource datasource = new StudentDataSource(getActivity().getBaseContext());
         datasource.open();
-      //  datasource.createStudents();
-        int length=datasource.listStudents();
         
+          int length=datasource.listStudents();
      if (!StudentDataSource.loaded)  {
         this.getListView().addHeaderView(header);
      }
@@ -59,13 +63,14 @@ public class ReadingListFragment extends ListFragment {
             aList.add(hm);        
         }
         
-        
+       
           SimpleAdapter adapter = new SimpleAdapter(getActivity().getBaseContext(), aList, R.layout.listview_layout, from, to);       
+         
+          setListAdapter(adapter);
+		 
+		 
+
 		
-		setListAdapter(adapter);
-          
-      
-   
         super.onActivityCreated(savedInstanceState);
     }
     
@@ -88,12 +93,17 @@ public class ReadingListFragment extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-    //	 setHasOptionsMenu(true);
-       //  super.onCreate(savedInstanceState);
+  		 
          return super.onCreateView(inflater, container, savedInstanceState);
         
    
-    }  
+    }
+
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        String item = (String) getListAdapter().getItem(position);
+        Toast.makeText(getActivity().getBaseContext(), item + " selected", Toast.LENGTH_LONG).show();
+      }
+	  
  
 	
 
