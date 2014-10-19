@@ -9,10 +9,16 @@
      <string name="LoadData">Load Data</string>
      <string name="password_hint">Enter Password</string>
       <string name="OK">OK</string>
+       <string name="Done">donebutton</string>
        <string name="label3">Parent:</string>
            <string name="label2">Last:</string>
           <string name="label1">First:</string>
-   
+  <string name="signin_label">Sign In</string> 
+  <string name="signout_label">Sign Out</string> 
+    <string name="student_label">Sign In</string> 
+  <string name="parent_label">Sign Out</string> 
+  
+           
       
      <string name="cancel">Cancel</string>
 </resources>

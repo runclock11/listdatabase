@@ -1,7 +1,5 @@
 package com.runclock.list;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -18,8 +16,11 @@ public class StudentDataSource {
   public static String name;
   public static String[] student = new String[10];
   public static String[] parent = new String[10];
+  public static String[] signIn = new String[10];
+  public static String[] signOut = new String[10];
+  public static String[] key    = new String[10];
   public static boolean loaded=false;
- private int count =0;
+
   private String[] allColumns = { SQLLiteHelper.COLUMN_ID,
       SQLLiteHelper.COLUMN_STUDENT,SQLLiteHelper.COLUMN_PARENT,SQLLiteHelper.COLUMN_IN,
       SQLLiteHelper.COLUMN_OUT,SQLLiteHelper.COLUMN_CLASS
@@ -32,7 +33,6 @@ public class StudentDataSource {
   public void open() {
 	  try {
     database = dbHelper.getWritableDatabase();
-   // database.execSQL("DROP TABLE IF EXISTS " + SQLLiteHelper.TABLE_STUDENTS);
     
 	  } 
 	  
@@ -60,13 +60,52 @@ public class StudentDataSource {
 	      database.close();
 
   }
+  
+  public int updateStudent(String id,String in, String out) {
+	  ContentValues values = new ContentValues();
+	    values.put(SQLLiteHelper.COLUMN_IN, in);
+	    values.put(SQLLiteHelper.COLUMN_OUT, out);
+	 
+	    // updating row
+	    int result= database.update(SQLLiteHelper.TABLE_STUDENTS, values, "_id  = ?",
+	            new String[] { String.valueOf(id) });
+	    return result;
+  }
+  public void selectStudent(String id) {
+	  
+	  student= new String[1];
+      parent = new String[1];
+      signIn = new String[1];
+      signOut = new String[1];
+   
+	  // 2. build query
+	    Cursor cursor = 
+	            database.query(SQLLiteHelper.TABLE_STUDENTS, // a. table
+	            allColumns, // b. column names
+	            " _id = ?", // c. selections 
+	            new String[] { String.valueOf(id) }, // d. selections args
+	            null, // e. group by
+	            null, // f. having
+	            null, // g. order by
+	            null); // h. limit
+	    
+	    // 3. if we got results get the first one
+	    if (cursor != null)
+	        cursor.moveToFirst();
+	 
+	    StudentDataSource.name=  cursor.getString(1);
+  	  student[0]= cursor.getString(1);
+  	  parent[0]=cursor.getString(2);
+	  signIn[0]=cursor.getString(3);
+	  signOut[0]=cursor.getString(4);
+  }
   public void createStudents() {
  
 	  
 	database.execSQL("delete from "+ SQLLiteHelper.TABLE_STUDENTS);
  	ContentValues values = new ContentValues();
    	values.put(SQLLiteHelper.COLUMN_STUDENT, "ChesterCooper");
-    	values.put(SQLLiteHelper.COLUMN_PARENT,  "Chester & Andrea Cooper");
+   	    values.put(SQLLiteHelper.COLUMN_PARENT,  "Chester & Andrea Cooper");
     	values.put(SQLLiteHelper.COLUMN_IN,  "0");
     	values.put(SQLLiteHelper.COLUMN_OUT,  "0");
     	values.put(SQLLiteHelper.COLUMN_CLASS,  "Eigth");
@@ -113,6 +152,9 @@ public class StudentDataSource {
                 null, null, null, null, null, null);
          student= new String[10];
          parent = new String[10];
+         signIn= new String[10];
+         signOut = new String[10];
+         key=new String[10];
             cursor.moveToFirst();
             int i =0;
               while (!cursor.isAfterLast()) {
@@ -120,8 +162,11 @@ public class StudentDataSource {
                   
             	
             	  StudentDataSource.name=  cursor.getString(1);
+            	  key[i]=cursor.getString(0);
             	  student[i]= cursor.getString(1);
             	  parent[i]=cursor.getString(2);
+            	  signIn[i]=cursor.getString(3);
+            	  signOut[i]=cursor.getString(4);
             	  i++;
             	  
             	Log.v("STUDENT", StudentDataSource.name);

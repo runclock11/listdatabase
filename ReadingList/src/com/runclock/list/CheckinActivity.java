@@ -1,32 +1,32 @@
 package com.runclock.list;
 
+import java.util.UUID;
 
-import com.runclock.list.R;
 
-import android.app.ActionBar.LayoutParams;
-import android.app.Dialog;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.Window;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
-public class MainActivity extends FragmentActivity {
+public class CheckinActivity extends FragmentActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		
-		
-		   ReadingListFragment firstFragment = new ReadingListFragment();
+        String studentId = (String)getIntent()
+                .getSerializableExtra(CheckinFragment.STUDENT_ID);
+       Log.v("STUDENTFRAG1", studentId);
+        
+        
+		 CheckinFragment firstFragment = CheckinFragment.newInstance(studentId);
+			   //CheckinFragment firstFragment = new CheckinFragment();
 
            // In case this activity was started with special instructions from an Intent,
            // pass the Intent's extras to the fragment as arguments
@@ -55,10 +55,18 @@ public class MainActivity extends FragmentActivity {
 			      return true;
 			    case R.id.add:
 			    	  FragmentManager fragMan1 = this.getSupportFragmentManager();
-			    	  FragmentTransaction fragTransaction1 = fragMan1.beginTransaction();
-
-				      NewStudentFragment myFrag1 = new NewStudentFragment();
-				      myFrag1.show(fragTransaction1, "tag");
+					 	 
+				   //   NewStudentFragment myFrag1 = new NewStudentFragment();
+				      MyListFragment myList = new MyListFragment();
+				      FragmentTransaction fragTransaction1 = fragMan1.beginTransaction();
+				      getFragmentManager().beginTransaction().add(android.R.id.content, myList).commit();
+				      
+				     
+						 
+				  	     //myFrag1.show(fragMan1, "tag");
+				    
+					    
+			    	
 			    return true;	
 			    default:
 			      return super.onOptionsItemSelected(item);
@@ -75,6 +83,9 @@ public class MainActivity extends FragmentActivity {
 	
 
 		   
+	
+	
+	
 	
 	
 	
