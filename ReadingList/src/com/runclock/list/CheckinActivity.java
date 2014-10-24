@@ -54,17 +54,12 @@ public class CheckinActivity extends FragmentActivity {
 			       fragTransaction.commit();
 			      return true;
 			    case R.id.add:
-			    	  FragmentManager fragMan1 = this.getSupportFragmentManager();
-					 	 
-				   //   NewStudentFragment myFrag1 = new NewStudentFragment();
-				      MyListFragment myList = new MyListFragment();
-				      FragmentTransaction fragTransaction1 = fragMan1.beginTransaction();
-				      getFragmentManager().beginTransaction().add(android.R.id.content, myList).commit();
-				      
-				     
-						 
-				  	     //myFrag1.show(fragMan1, "tag");
-				    
+			    	
+			    	 FragmentManager fragMan1 = this.getSupportFragmentManager();
+			    	  FragmentTransaction fragTransaction1 = fragMan1.beginTransaction();
+                     NewStudentFragment myFrag1 = new NewStudentFragment();
+				      myFrag1.show(fragTransaction1, "tag");
+			  		    
 					    
 			    	
 			    return true;	
