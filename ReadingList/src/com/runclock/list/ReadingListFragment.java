@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.content.Intent;
+import android.content.res.Resources;
 
 import android.os.Bundle;
 
@@ -55,10 +56,11 @@ public class ReadingListFragment extends ListFragment
         }
         
        
-          SimpleAdapter adapter = new SimpleAdapter(getActivity().getBaseContext(), aList, R.layout.listview_layout, from, to);       
-         
-          setListAdapter(adapter);
-  
+                
+          Resources res =getResources();
+          
+          CustomAdapter adapters=new CustomAdapter(getActivity(), (ArrayList)aList,res );
+          setListAdapter(adapters);
 		 
           super.onActivityCreated(savedInstanceState);
        
@@ -91,11 +93,7 @@ public class ReadingListFragment extends ListFragment
     
     }
 
-  //  public void onListItemClick(ListView l, View v, int position, long id) {
-    //    String item = (String) getListAdapter().getItem(position);
-   //   Toast.makeText(getActivity().getBaseContext(), item + " selected", Toast.LENGTH_LONG).show();
-      //}
-	  
+ 	  
  
 	
 

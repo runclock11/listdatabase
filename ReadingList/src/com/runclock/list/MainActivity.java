@@ -56,8 +56,7 @@ public class MainActivity extends FragmentActivity {
 			    case R.id.add:
 			    	  FragmentManager fragMan1 = this.getSupportFragmentManager();
 			    	  FragmentTransaction fragTransaction1 = fragMan1.beginTransaction();
-
-				      NewStudentFragment myFrag1 = new NewStudentFragment();
+                      NewStudentFragment myFrag1 = new NewStudentFragment();
 				      myFrag1.show(fragTransaction1, "tag");
 			    return true;	
 			    default:

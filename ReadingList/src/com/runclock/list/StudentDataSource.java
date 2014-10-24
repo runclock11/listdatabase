@@ -150,11 +150,12 @@ public class StudentDataSource {
     public int listStudents() {
        Cursor cursor = database.query(SQLLiteHelper.TABLE_STUDENTS,
                 null, null, null, null, null, null);
-         student= new String[10];
-         parent = new String[10];
-         signIn= new String[10];
-         signOut = new String[10];
-         key=new String[10];
+         int size=cursor.getCount();
+         student= new String[size];
+         parent = new String[size];
+         signIn= new String[size];
+         signOut = new String[size];
+         key    =new String[size];
             cursor.moveToFirst();
             int i =0;
               while (!cursor.isAfterLast()) {
