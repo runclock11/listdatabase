@@ -7,9 +7,10 @@ import android.content.Context;
 import android.util.Log;
 
 public class SQLLiteHelper extends SQLiteOpenHelper {
-public static final String TABLE_STUDENTS = "students12";
+public static final String TABLE_STUDENTS = "students17";
 public static final String COLUMN_ID = "_id";
-public static final String COLUMN_STUDENT = "student_name";
+public static final String COLUMN_FIRST = "student_first";
+public static final String COLUMN_LAST = "student_last";
 public static final String COLUMN_PARENT = "parent_name";
 public static final String COLUMN_IN = "signIn";
 public static final String COLUMN_OUT = "signOut";
@@ -19,7 +20,8 @@ private static final int DATABASE_VERSION = 1;
 private static final String DATABASE_CREATE = "create table "
     + TABLE_STUDENTS + "(" + COLUMN_ID
     + " integer primary key autoincrement, " +
-    COLUMN_STUDENT + " text, " +
+    COLUMN_FIRST + " text, " +
+    COLUMN_LAST + " text, " +
     COLUMN_PARENT  + " text, " +
     COLUMN_IN      + " text, " +
     COLUMN_OUT  + " text, " +
@@ -30,7 +32,7 @@ private static final String DATABASE_CREATE = "create table "
 
 
 
-private static final String DATABASE_NAME = "students12.db";
+private static final String DATABASE_NAME = "students17.db";
 public SQLLiteHelper(Context context) {
 	
     

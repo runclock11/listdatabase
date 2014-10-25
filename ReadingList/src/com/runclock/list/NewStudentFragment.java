@@ -32,16 +32,13 @@ public class NewStudentFragment extends DialogFragment {
                 
                 StudentDataSource datasource = new StudentDataSource(getActivity().getBaseContext());
                 datasource.open();
-           datasource.createStudents(ed1.getText().toString()+ ed1.getText().toString(), ed3.getText().toString(),"Prek");
-         // FragmentManager fragmentManager = getFragmentManager();
-        //   fragmentManager.popBackStack();
-          FragmentManager fragMan = getFragmentManager();
+           datasource.createStudents(ed1.getText().toString(), ed2.getText().toString(), ed3.getText().toString(),"Prek");
+            FragmentManager fragMan = getFragmentManager();
 	        FragmentTransaction fragTransaction = fragMan.beginTransaction();
 
            Fragment myFrag = new ReadingListFragment();
 	       fragTransaction.replace(R.id.fragment_container,myFrag);
-	    // fragTransaction.addToBackStack(null);
-	       fragTransaction.commit();
+	         fragTransaction.commit();
            getDialog().dismiss();
             }
             });

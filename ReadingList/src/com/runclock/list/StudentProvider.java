@@ -45,7 +45,7 @@ public class StudentProvider extends ContentProvider {
 	
 
 	 private String[] allColumns = { SQLLiteHelper.COLUMN_ID,
-	     SQLLiteHelper.COLUMN_STUDENT,SQLLiteHelper.COLUMN_PARENT,SQLLiteHelper.COLUMN_IN,
+	     SQLLiteHelper.COLUMN_FIRST,SQLLiteHelper.COLUMN_LAST,SQLLiteHelper.COLUMN_PARENT,SQLLiteHelper.COLUMN_IN,
 	     SQLLiteHelper.COLUMN_OUT,SQLLiteHelper.COLUMN_CLASS
 	    };  
 		
@@ -86,7 +86,7 @@ public class StudentProvider extends ContentProvider {
 	      }
 	      if (sortOrder == null || sortOrder == ""){
 	         // No sorting-> sort on names by default
-	         sortOrder = SQLLiteHelper.COLUMN_STUDENT;
+	         sortOrder = SQLLiteHelper.COLUMN_LAST;
 	      }
 	      Cursor cursor = queryBuilder.query(database, projection, selection, 
 	    		  selectionArgs, null, null, sortOrder);
