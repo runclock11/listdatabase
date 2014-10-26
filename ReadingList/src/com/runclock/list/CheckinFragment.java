@@ -21,6 +21,7 @@ import android.widget.TextView;
 public class CheckinFragment extends Fragment {
 	 public static final String STUDENT_ID = "checkin.STUDENT_ID";
      private String studentId;
+     private Students std;
 	 public static CheckinFragment newInstance(String studentId) {
 	        Bundle args = new Bundle();
 	        args.putSerializable(STUDENT_ID, studentId);
@@ -41,7 +42,7 @@ public class CheckinFragment extends Fragment {
 	         studentId = (String)getArguments().getSerializable(STUDENT_ID);
 	        StudentDataSource datasource = new StudentDataSource(getActivity().getBaseContext());
 	         datasource.open();;
-	        datasource.selectStudent(studentId);
+	         std= datasource.selectStudent(studentId);
 	        datasource.close();
 	    
 	    }
@@ -51,9 +52,9 @@ public class CheckinFragment extends Fragment {
 	    public View onCreateView(LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
 	        View view = inflater.inflate(R.layout.checkin_fragment, container, false);
 	        TextView tv1= (TextView)view.findViewById(R.id.studentLabel);
-	        tv1.setText(StudentDataSource.student[0]);
+	        tv1.setText(std.getFirstname() + "" + std.getLastname());
 ;		    TextView tv2= (TextView)view.findViewById(R.id.parentLabel);
-            tv2.setText(StudentDataSource.parent[0]);
+            tv2.setText(std.getParentsName());
             Button btndone =(Button)view.findViewById(R.id.donebutton);
             final CheckBox chkSignIn = (CheckBox)view.findViewById (R.id.signin_chk);
             final CheckBox chkSignOut = (CheckBox)view.findViewById (R.id.signout_chk);

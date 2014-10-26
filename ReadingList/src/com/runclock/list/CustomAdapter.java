@@ -1,36 +1,22 @@
 package com.runclock.list;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import android.app.Activity;
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-//public class CustomAdapter extends BaseAdapter {
-
-
-
-
-
 
 public class CustomAdapter extends BaseAdapter   implements OnClickListener {
     
     /*********** Declare Used Variables *********/
     private Activity activity;
-    private ArrayList data;
+    private ArrayList<Students> data;
      public Resources res;
    
     int i=0;
@@ -38,7 +24,7 @@ public class CustomAdapter extends BaseAdapter   implements OnClickListener {
 	
 
     /*************  CustomAdapter Constructor *****************/
-    public CustomAdapter(Activity a, ArrayList d,Resources resLocal) {
+    public CustomAdapter(Activity a, ArrayList<Students> d,Resources resLocal) {
          
            /********** Take passed values **********/
             activity = a;
@@ -48,8 +34,7 @@ public class CustomAdapter extends BaseAdapter   implements OnClickListener {
              
     }
  
-    /******** What is the size of Passed Arraylist Size ************/
-    public int getCount() {
+        public int getCount() {
          
         if(data.size()<=0)
             return 1;
@@ -112,11 +97,11 @@ public class CustomAdapter extends BaseAdapter   implements OnClickListener {
           
              
             /************  Set Model values in Holder elements ***********/
-
-             holder.text.setText( StudentDataSource.student[position]);
-             holder.text1.setText( StudentDataSource.parent[position] );
-             holder.text3.setText(StudentDataSource.signIn[position] );
-             holder.text4.setText(StudentDataSource.signOut[position] );
+             Students std= data.get(position);
+             holder.text.setText(std.getFirstname() + " " + std.getLastname());
+             holder.text1.setText(std.getParentsName());
+             holder.text3.setText(std.getSignIn());
+             holder.text4.setText(std.getSignOut());
              
           //    holder.image.setImageResource(
             //              res.getIdentifier(
@@ -145,14 +130,10 @@ public class CustomAdapter extends BaseAdapter   implements OnClickListener {
         @Override
         public void onClick(View arg0) {
 
-        	// To dismiss the dialog
-        	
-        	//  Log.d(TAG, "getTitle()" + " was clicked");
-               Intent i = new Intent(activity.getBaseContext(), CheckinActivity.class);
-              //Log.v("STUDENTFRAG", StudentDataSource.key.toString());
+        	      Intent i = new Intent(activity.getBaseContext(), CheckinActivity.class);
               
-              i.putExtra(CheckinFragment.STUDENT_ID, StudentDataSource.key[mPosition]);
-            
+              i.putExtra(CheckinFragment.STUDENT_ID,   data.get(mPosition).getKey());
+              
               activity.startActivityForResult(i, 0);
       
         }               

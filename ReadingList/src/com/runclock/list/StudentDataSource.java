@@ -1,6 +1,12 @@
 package com.runclock.list;
 
 
+
+import java.util.ArrayList;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -14,11 +20,7 @@ public class StudentDataSource {
   private SQLiteDatabase database;
   private SQLLiteHelper dbHelper;
   public static String name;
-  public static String[] student = new String[10];
-  public static String[] parent = new String[10];
-  public static String[] signIn = new String[10];
-  public static String[] signOut = new String[10];
-  public static String[] key    = new String[10];
+  public ArrayList<Students> studentsList = new ArrayList<Students>();  
   public static boolean loaded=false;
 
   private String[] allColumns = { SQLLiteHelper.COLUMN_ID,
@@ -72,13 +74,9 @@ public class StudentDataSource {
 	            new String[] { String.valueOf(id) });
 	    return result;
   }
-  public void selectStudent(String id) {
+  public Students selectStudent(String id) {
 	  
-	  student= new String[1];
-      parent = new String[1];
-      signIn = new String[1];
-      signOut = new String[1];
-   
+	 
 	  // 2. build query
 	    Cursor cursor = 
 	            database.query(SQLLiteHelper.TABLE_STUDENTS, // a. table
@@ -93,13 +91,16 @@ public class StudentDataSource {
 	    // 3. if we got results get the first one
 	    if (cursor != null)
 	        cursor.moveToFirst();
-	 
-	    StudentDataSource.name=  cursor.getString(1);
-  	  student[0]= cursor.getString(1) +" " + cursor.getString(2);
-  	  parent[0]=cursor.getString(3);
-	  signIn[0]=cursor.getString(4);
-	  signOut[0]=cursor.getString(5);
-  }
+	   Students std = new Students();
+	   std.setKey(cursor.getString(0));
+	   std.setFirstname(cursor.getString(1));
+       std.setLastname(cursor.getString(2));
+       std.setParentsName(cursor.getString(3));
+       std.setSignIn(cursor.getString(4));
+       std.setSignOut(cursor.getString(5));
+	   return std;
+	   
+	  }
   public void createStudents() {
  
 	  
@@ -160,32 +161,30 @@ public class StudentDataSource {
         database.close();
   }
     public int listStudents() {
-      // Cursor cursor = database.query(SQLLiteHelper.TABLE_STUDENTS,
-        //        null, null, null,null,SQLLiteHelper.COLUMN_LAST,SQLLiteHelper.COLUMN_FIRST);
        String sql="SELECT * from " + SQLLiteHelper.TABLE_STUDENTS + " order by " + SQLLiteHelper.COLUMN_LAST 
     		   + "," + SQLLiteHelper.COLUMN_FIRST;
        Cursor cursor = database.rawQuery(sql, null);  
        int size=cursor.getCount();
-         student= new String[size];
-         parent = new String[size];
-         signIn= new String[size];
-         signOut = new String[size];
-         key    =new String[size];
+           studentsList = new ArrayList<Students>(size);
             cursor.moveToFirst();
             int i =0;
               while (!cursor.isAfterLast()) {
             	  Log.v("STUDENT111", Integer.toString(i));
                   
             	
+            	  Students std = new Students();
             	  StudentDataSource.name=  cursor.getString(1);
-            	  key[i]=cursor.getString(0);
-            	  student[i]= cursor.getString(1) + " " + cursor.getString(2);
-            	  parent[i]=cursor.getString(3);
-            	  signIn[i]=cursor.getString(4);
-            	  signOut[i]=cursor.getString(5);
+            	  std.setKey(cursor.getString(0));
+            	  std.setFirstname(cursor.getString(1));
+            	  std.setLastname(cursor.getString(2));
+            	  std.setParentsName(cursor.getString(3));
+            	  std.setSignIn(cursor.getString(4));
+            	  std.setSignOut(cursor.getString(5));
+                  
+            	  studentsList.add(std);
             	  i++;
             	  
-            	Log.v("STUDENT", StudentDataSource.name);
+            	Log.v("STUDENT", studentsList.toString());
             	    cursor.moveToNext();
             }
             // make sure to close the cursor
@@ -198,6 +197,36 @@ public class StudentDataSource {
     
 
    }
-
+public static String toJson() {
+	String input ="{	\"year\": \"2014\",\n" + 
+			"	\"name\": \"Youth Sunday School\",\n" + 
+			"	\"classes\":\n" + 
+			"		{\n" + 
+			"			\"prek\":\n" + 
+			"				[\n" + 
+			"					{ \"firstname\": \"Chester\", \"lastname\":\"Andrea Cooper\", \"signin\":\"false\", \"signout\":\"false\" },\n" + 
+			"							{ \"firstname\": \"Russell\", \"lastname\":\"Brown\", \"signin\":\"false\", \"signout\":\"false\" },      		        { \"firstname\": \"Chester\", \"lastname\":\"Tesla\", \"signin\":\"false\", \"signout\":\"false\" },		               { \"firstname\": \"Chester\", \"lastname\":\"Smith\", \"signin\":\"false\", \"signout\":\"false\" },	                	{ \"firstname\": \"Chester\", \"lastname\":\"Cooper\", \"signin\":\"false\", \"signout\":\"false\" },	                	{ \"firstname\": \"Chester\", \"lastname\":\"Kay\", \"signin\":\"false\", \"signout\":\"false\" },\n" + 
+			"         { \"firstname\": \"Chester\", \"lastname\":\"Wilson\", \"signin\":\"false\", \"signout\":\"false\" }\n" + 
+			"         ],\n" + 
+			"				\"beginner\":\n" + 
+			"				[\n" + 
+			"			{ \"firstname\": \"Chester\", \"lastname\":\"Andrea Cooper\", \"signin\":\"false\", \"signout\":\"false\" },\n" + 
+			"						{ \"firstname\": \"Chester\", \"lastname\":\"Andrea Cooper\", \"signin\":\"false\", \"signout\":\"false\" }\n" + 
+			"				]\n" + 
+			"		}\n" + 
+			"}";
+	//JSONObject jsonObj = new JSONObject();
+	  try {
+		JSONObject json = new JSONObject(input);
+		return json.toString();
+	} catch (JSONException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	   
+	      
+	
+	return "";
+}
  
 } 

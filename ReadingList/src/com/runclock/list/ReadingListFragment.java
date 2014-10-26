@@ -3,7 +3,7 @@ package com.runclock.list;
 
 import com.runclock.list.R;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
 
@@ -20,46 +20,35 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 public class ReadingListFragment extends ListFragment 
    {
 	private static final String TAG = "ReadingList";
-	
+	private StudentDataSource datasource;
 
-	 private List<HashMap<String,String>> aList;
-	    String[] from = { "student","parent", "signIn", "signOut"};
-        int[] to = { R.id.student, R.id.parent,R.id.listin,R.id.listout};        
-  
+	
      
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
+    	String x = StudentDataSource.toJson();
+    	Log.d(TAG, x);
+
         View header = getActivity().getLayoutInflater().inflate(R.layout.listview_header, null);
-         StudentDataSource datasource = new StudentDataSource(getActivity().getBaseContext());
+        datasource = new StudentDataSource(getActivity().getBaseContext());
         datasource.open();
+        datasource.listStudents();
         
-          int length=datasource.listStudents();
-     if (!StudentDataSource.loaded)  {
+         if (!StudentDataSource.loaded)  {
         this.getListView().addHeaderView(header);
      }
-        aList = new ArrayList<HashMap<String,String>>();        
-        
-        for(int i=0;i<length;i++){
-        	HashMap<String, String> hm = new HashMap<String,String>();
-            hm.put("student", StudentDataSource.student[i]);
-            hm.put("parent", StudentDataSource.parent[i]);
-            hm.put("signIn", StudentDataSource.signIn[i]);
-            hm.put("signOut", StudentDataSource.signOut[i]);
-            		  
-            aList.add(hm);        
-        }
+       
         
        
                 
           Resources res =getResources();
           
-          CustomAdapter adapters=new CustomAdapter(getActivity(), (ArrayList)aList,res );
+          CustomAdapter adapters=new CustomAdapter(getActivity(), datasource.studentsList,res );
           setListAdapter(adapters);
 		 
           super.onActivityCreated(savedInstanceState);
@@ -87,8 +76,7 @@ public class ReadingListFragment extends ListFragment
          Toast.makeText(getActivity().getBaseContext(), TAG + " selected", Toast.LENGTH_LONG).show();
          Intent i = new Intent(getActivity(), CheckinActivity.class);
          Log.v("STUDENTFRAG", Integer.toString(position-1));
-         
-         i.putExtra(CheckinFragment.STUDENT_ID, StudentDataSource.key[position-1]);
+         i.putExtra(CheckinFragment.STUDENT_ID,  datasource.studentsList.get(position-1).getKey());
          startActivityForResult(i, 0);
     
     }
